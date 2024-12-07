@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:inputs/routes/app_routes.dart';
+
+import 'pages/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,38 +10,17 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown),
         useMaterial3: true,
       ),
+      routes: appRoutes,
       home: const HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Home Page'),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-          style: TextStyle(
-            fontSize: 24,
-            color: Colors.black,
-          ),
-        ),
-      ),
     );
   }
 }
