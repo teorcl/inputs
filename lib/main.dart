@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:inputs/routes/app_routes.dart';
 
 import 'pages/home_page.dart';
+import 'utils/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,10 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown),
-        useMaterial3: true,
-      ),
+      theme: getThemeData(context),
       routes: appRoutes,
       home: const HomePage(),
     );

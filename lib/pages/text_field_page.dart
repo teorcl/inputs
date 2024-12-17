@@ -13,6 +13,7 @@ class TextFieldPage extends StatefulWidget {
 class _TextFieldPageState extends State<TextFieldPage> {
   late final List<CountryModel> _countries;
   String searchText = '';
+  final _textEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -29,31 +30,42 @@ class _TextFieldPageState extends State<TextFieldPage> {
     return Scaffold(
       appBar: AppBar(
         title: TextField(
+          controller: _textEditingController,
           onChanged: (value) {
             setState(() {
               searchText = value;
             });
           },
-          decoration: const InputDecoration(
-            label: Text('Buscar país...'),
-            contentPadding: EdgeInsets.symmetric(
+          decoration: InputDecoration(
+            label: const Text('Buscar país...'),
+            contentPadding: const EdgeInsets.symmetric(
               horizontal: 10,
               vertical: 10,
             ),
-            focusedBorder: OutlineInputBorder(
+            focusedBorder: const OutlineInputBorder(
               borderSide: BorderSide(
                 color: Colors.red,
               ),
             ),
             hintText: 'Search country',
             border: InputBorder.none,
-            prefixIcon: Icon(Icons.search),
-            enabledBorder: OutlineInputBorder(
+            prefixIcon: const Icon(Icons.search),
+            enabledBorder: const OutlineInputBorder(
               borderSide: BorderSide(
                 color: Colors.black54,
               ),
             ),
-            suffixIcon: Icon(Icons.clear),
+            suffixIcon: IconButton(
+              onPressed: () {
+                _textEditingController.clear();
+                searchText = '';
+                // setState(() {
+                // });
+                FocusScope.of(context)
+                    .unfocus(); // Esta linea forza a que se vuelva a renderizar la visata, puesto que cada vez que se oculta o aparece el teclado la ui se renderiza
+              },
+              icon: const Icon(Icons.clear),
+            ),
           ),
         ),
       ),
@@ -80,5 +92,16 @@ class _TextFieldPageState extends State<TextFieldPage> {
   void initState() {
     super.initState();
     _countries = countries.map((item) => CountryModel.fromJson(item)).toList();
+    // _textEditingController.addListener(() {
+    //   setState(() {
+    //     searchText = _textEditingController.text;
+    //   });
+    // });
+  }
+
+  @override
+  void dispose() {
+    _textEditingController.dispose();
+    super.dispose();
   }
 }
