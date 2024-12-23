@@ -26,5 +26,13 @@ ThemeData getThemeData(BuildContext context) {
         ),
       ),
     ),
+    checkboxTheme: CheckboxThemeData(
+      checkColor: WidgetStateProperty.all(Colors.greenAccent),
+      fillColor: WidgetStateProperty.all(Colors.red),
+      overlayColor: WidgetStateProperty.all(Colors.blueGrey.withValues()),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
+    ),
   );
 }
