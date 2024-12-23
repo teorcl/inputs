@@ -34,5 +34,8 @@ ThemeData getThemeData(BuildContext context) {
         borderRadius: BorderRadius.circular(10),
       ),
     ),
+    radioTheme: RadioThemeData(
+      fillColor: WidgetStateProperty.all(Colors.red),
+    ),
   );
 }

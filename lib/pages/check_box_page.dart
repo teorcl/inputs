@@ -27,6 +27,21 @@ class _CheckBoxPageState extends State<CheckBoxPage> {
             Laboris exercitation laboris ad duis minim et ut qui laboris magna anim. 
             Do dolore anim minim et.''',
                 ),
+                CheckboxListTile(
+                  value: isChecked,
+                  controlAffinity: ListTileControlAffinity.leading,
+                  contentPadding: EdgeInsets.zero,
+                  visualDensity: VisualDensity.compact,
+                  onChanged: (value) {
+                    debugPrint('value🤬🤬🤬🤬🤬🤬: $value');
+                    setState(() {
+                      isChecked = value ?? false;
+                    });
+                  },
+                  title: const Text(
+                    'Fugiat voluptate labore qui culpa adipisicing enim aute culpa occaecat.',
+                  ),
+                ),
                 Checkbox(
                   value: isChecked,
                   onChanged: (value) {
@@ -45,7 +60,7 @@ class _CheckBoxPageState extends State<CheckBoxPage> {
                   },
                   fillColor: WidgetStateProperty.all(Colors.green),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(5),
                   ),
                 ),
                 MaterialButton(
