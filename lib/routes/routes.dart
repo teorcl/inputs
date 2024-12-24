@@ -5,4 +5,5 @@ class Routes {
   static const String keyboardTypes = '/keyboard-types';
   static const String checkBox = '/check-box';
   static const String radio = '/radio';
+  static const String slider = '/slider';
 }

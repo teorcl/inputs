@@ -43,5 +43,18 @@ ThemeData getThemeData(BuildContext context) {
       // overlayColor: WidgetStateProperty.all(Colors.blueGrey.withValues()),
       // materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
     ),
+    sliderTheme: SliderThemeData(
+      activeTrackColor: Colors.pinkAccent,
+      thumbColor: Colors.pink,
+      //overlayColor: Colors.pink.withValues(alpha: 32),
+      overlayColor: Colors.pink.withAlpha(32),
+      valueIndicatorColor: Colors.pink,
+      inactiveTrackColor: Colors.pinkAccent.withAlpha(28),
+      trackHeight: 12,
+      inactiveTickMarkColor: Colors.white54,
+      thumbShape: const RoundSliderThumbShape(
+        enabledThumbRadius: 16,
+      ),
+    ),
   );
 }
