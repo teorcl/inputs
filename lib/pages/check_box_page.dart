@@ -63,6 +63,29 @@ class _CheckBoxPageState extends State<CheckBoxPage> {
                     borderRadius: BorderRadius.circular(5),
                   ),
                 ),
+                Switch(
+                  value: isChecked,
+                  onChanged: (value) {
+                    debugPrint('value🤬🤬🤬🤬🤬🤬: $value');
+                    setState(() {
+                      isChecked = value;
+                    });
+                  },
+                ),
+                SwitchListTile(
+                  value: isChecked,
+                  onChanged: (value) {
+                    debugPrint('value🤬🤬🤬🤬🤬🤬: $value');
+                    setState(() {
+                      isChecked = value;
+                    });
+                  },
+                  title: const Text(
+                    'SwitchListTile',
+                  ),
+                  inactiveTrackColor: Colors.blueGrey.shade100,
+                  activeTrackColor: Colors.blueGrey.shade900,
+                ),
                 MaterialButton(
                   //onPressed: onPressed,
                   //onPressed: () => onChanged(isChecked),

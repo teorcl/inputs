@@ -37,5 +37,11 @@ ThemeData getThemeData(BuildContext context) {
     radioTheme: RadioThemeData(
       fillColor: WidgetStateProperty.all(Colors.red),
     ),
+    switchTheme: SwitchThemeData(
+      thumbColor: WidgetStateProperty.all(Colors.blue),
+      // trackColor: WidgetStateProperty.all(Colors.red),
+      // overlayColor: WidgetStateProperty.all(Colors.blueGrey.withValues()),
+      // materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+    ),
   );
 }
