@@ -6,4 +6,5 @@ class Routes {
   static const String checkBox = '/check-box';
   static const String radio = '/radio';
   static const String slider = '/slider';
+  static const String calendar = '/calendar';
 }
